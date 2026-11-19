@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeatherNow — Dashboard Cuaca</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="app-head">
+      <div class="brand">
+        <div class="brand__mark">WN</div>
+        <h1>WeatherNow</h1>
+      </div>
+    </header>
+
+    <section class="search">
+      <form id="searchForm">
+        <input type="text" id="cityInput" placeholder="Masukkan nama kota" value="Jakarta">
+        <button type="submit">Cari</button>
+      </form>
+    </section>
+
+    <div class="weather-card current" id="currentCard" style="display:none">
+      <div class="current" id="current">
+        <div>
+          <div class="icon" id="curIcon"></div>
+          <div>
+            <div id="curTemp">--°C</div>
+            <div id="curCode" class="details__label"></div>
+            <div id="curWind" class="details__row">
+              <span class="details__label">Angin</span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-card forecast" id="forecastCard" style="display:none">
+      <h2 style="margin-bottom:16px">7 Hari Ke Depan</h2>
+      <div class="forecast" id="forecastContainer"></div>
+    </div>
+
+    <div class="error" id="error">Gagal mengambil data cuaca. Coba kota lain.</div>
+    <div class="loading" id="loading">Memuat data...</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
